@@ -1,0 +1,25 @@
+/* 
+    Document   : cimkill
+    Created on : Mar 14, 2013, 11:49:56 AM
+    Author     : romont.johnson
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.mainPanel {
+    background-image: url(http://www.paulmaricle.com/images/blue_background.jpg);
+    background-color: blue;
+}
+
+.parentContainer {
+    background: #E1F0FF url(../images/cimkill_bg.png) repeat-x bottom right;
+}
