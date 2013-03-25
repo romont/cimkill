@@ -1,5 +1,5 @@
 Ext.define('CK.view.Singleviewport', {
-    extend: 'Ext.container.Viewport',
+    extend: 'Ext.panel.Panel',
     alias: 'widget.singleview',
 
     cls: 'parentContainer',

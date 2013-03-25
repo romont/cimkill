@@ -9,11 +9,11 @@ Ext.application({
 
     launch: function() {
         Ext.create('Ext.container.Viewport', {
-            layout: 'auto',
-            bodyCls: 'parentContainer',
+            layout: 'fit',
             items:
             [{
                 xtype: 'singleview',
+                bodyCls: 'parentContainer',
                 region: 'center',
                 
                 items: [{

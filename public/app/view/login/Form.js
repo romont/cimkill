@@ -4,6 +4,7 @@ Ext.define('CK.view.login.Form', {
     bodyPadding: 5,
 
     alias: 'widget.loginform',
+    name: 'loginform',
 
     title: 'Login to Cimkill',
     layout: 'anchor',
@@ -16,7 +17,8 @@ Ext.define('CK.view.login.Form', {
             xtype: 'textfield',
             name: 'email',
             fieldLabel: 'Email',
-            allowBlank: false
+            allowBlank: false,
+            inputType: 'text'
         },
         {
             xtype: 'textfield',
@@ -24,16 +26,21 @@ Ext.define('CK.view.login.Form', {
             fieldLabel: 'Password',
             inputType: 'password',
             allowBlank: false
-        },
-        {
-            xtype: 'button',
-            text: 'Log In',
-            formBind: true,
-            disabled: true
         }
         ];
 
-    this.callParent(arguments);
+        this.buttons = [
+        {
+            xtype: 'button',
+            text: 'Log In',
+            name: 'loginButton',
+            action: 'login',
+            formBind: true,
+            disabled: true
+        }
+        ]
+
+        this.callParent(arguments);
     //renderTo: Ext.getBody()
     }
 
