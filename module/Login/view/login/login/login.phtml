@@ -1,0 +1,53 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('ZF2 ' . $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php //echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <!-- Le styles -->
+        <?php
+        echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
+                ->prependStylesheet($this->basePath() . '/ext-4/resources/css/ext-all.css')
+                ->appendStylesheet($this->basePath() . '/css/cimkill.css')
+        ?>
+
+        <!-- Scripts -->
+        <?php
+        echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+                ->prependFile($this->basePath() . '/js/jquery.min.js')
+                ->appendFile($this->basePath() . '/ext-4/ext-debug.js')
+                ->appendFile($this->basePath() . '/app.js')
+        ?>
+
+    </head>
+    <body></body>
+</html>
+
+<?php /*
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+    'login/process',
+    array(
+        'action'     => 'authenticate',
+    )
+));
+$form->prepare();
+ 
+echo $this->form()->openTag($form);
+echo $this->formCollection($form);
+echo $this->form()->closeTag();
+
+if ($this->messages){
+    echo '<ul>';
+    foreach($this->messages as $message)
+    {
+        echo '<li>'.$message.'</li>';
+    }
+    echo '</ul>';
+}
+ * */
+?>

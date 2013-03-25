@@ -13,16 +13,32 @@ return array(
                 'options' => array(
                     'route' => '/login',
                     'defaults' => array(
-                        'controller' => 'Login\Controller\Login',
+                        '__NAMESPACE__' => 'Login\Controller',
+                        'controller' => 'Login',
+                        'action' => 'login',
                     ),
                 ),
-                'view_manager' => array(
-                    'template_path_stack' => array(
-                        'login' => __DIR__ . '/../view',
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'process' => array(
+                        'type' => 'Segment',
+                        'options' => array(
+                            'route' => '/[:action]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
                     ),
-                    'layout' => 'layout/plain',
                 ),
             ),
+        ),
+    ),
+    'view_manager' => array(
+        'template_path_stack' => array(
+            'Login' => __DIR__ . '/../view',
         ),
     ),
 );
