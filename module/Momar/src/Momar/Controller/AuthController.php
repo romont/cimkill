@@ -19,7 +19,7 @@ class AuthController extends AbstractRestfulController {
     }
     
     public function getList() {
-        
+        return new JsonModel(array("data" => 0));
     }
     
     public function create($data) {
@@ -59,11 +59,11 @@ class AuthController extends AbstractRestfulController {
     }
     
     public function update($id, $data) {
-        
+        return new JsonModel(array("data" => 0));
     }
     
     public function delete($id) {
-        
+        return new JsonModel(array("data" => 0));
     }
 
     public function getAuthService() {
