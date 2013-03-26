@@ -37,22 +37,21 @@ class AuthController extends AbstractRestfulController {
                 //save message temporary into flashmessenger
                 $this->flashmessenger()->addMessage($message);
             }
-        }
-         /*   if ($result->isValid()) {
+           if ($result->isValid()) {
                 //$redirect = 'application';
                 //check if it has rememberMe :
-                if ($data->rememberMe == 1) {
+                /*if ($data->rememberMe == 1) {
                     $this->getSessionStorage()
                             ->setRememberMe(1);
                     //set storage again
                     $this->getAuthService()->setStorage($this->getSessionStorage());
-                }
+                }*/
                 $this->getAuthService()->getStorage()->write($data->email);
                 return new JsonModel(array('success' => true));
             } else {
                 return new JsonModel(array('success' => false));
             }
-        }*/
+        }
         return new JsonModel(array('success' => true, 'data' => $data));
     }
 
