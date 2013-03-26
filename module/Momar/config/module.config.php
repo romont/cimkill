@@ -23,7 +23,7 @@ return array(
                 ),
             ),
             'auth' => array(
-                'type' => 'Literal',
+                'type' => 'Segment',
                 'options' => array(
                     'route' => '/momar/auth[/:id]',
                     'constraints' => array(
