@@ -38,16 +38,19 @@ Ext.define('CK.controller.Login', {
                         url: 'login/authenticate',
                         method: 'POST',
                         success: function(form,action) {
-                            store.load();
-                            store.sync();
+                            //store.load();
+                            //store.sync();
+                            
                             loginButton.setVisible(false);
+                            window.location = '/index';
+                            
                         },
                         failure: function(form,action){
                             Ext.MessageBox.alert('Error', "Invalid email/password");
                         },
                         params:
                         {
-                            view: 'sencha',
+                            //view: 'sencha',
                             json: true
                         }
                     });
