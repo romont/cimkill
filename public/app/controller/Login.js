@@ -35,7 +35,7 @@ Ext.define('CK.controller.Login', {
 
                     this.getLoginForm().form.submit({
                         waitMsg:'Loading...',
-                        url: 'auth/create',
+                        url: '/momar/auth/create',
                         method: 'POST',
                         success: function(form,action) {
                             //store.load();

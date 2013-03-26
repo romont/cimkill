@@ -22,10 +22,13 @@ return array(
                     ),
                 ),
             ),
-            'login' => array(
+            'auth' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/auth',
+                    'route' => '/momar/auth[/:id]',
+                    'constraints' => array(
+                        'id' => '[0-9]+',
+                    ),
                     'defaults' => array(
                         '__NAMESPACE__' => 'Momar\Controller',
                         'controller' => 'Auth',
