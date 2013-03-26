@@ -25,7 +25,7 @@ class AuthController extends AbstractRestfulController {
     public function create($data) {
         $form = new LoginForm();
 
-        /*$form->setData($data);
+        $form->setData($data);
         if ($form->isValid()) {
             //check authentication...
             $this->getAuthService()->getAdapter()
@@ -37,8 +37,8 @@ class AuthController extends AbstractRestfulController {
                 //save message temporary into flashmessenger
                 $this->flashmessenger()->addMessage($message);
             }
-
-            if ($result->isValid()) {
+        }
+         /*   if ($result->isValid()) {
                 //$redirect = 'application';
                 //check if it has rememberMe :
                 if ($data->rememberMe == 1) {
