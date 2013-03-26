@@ -76,7 +76,7 @@ class AuthController extends AbstractRestfulController {
     public function getSessionStorage() {
         if (!$this->storage) {
             $this->storage = $this->getServiceLocator()
-                    ->get('Login\Model\MyAuthStorage');
+                    ->get('Model\Model\MyAuthStorage');
         }
 
         return $this->storage;
