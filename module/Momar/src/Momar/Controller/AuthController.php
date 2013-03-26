@@ -52,7 +52,6 @@ class AuthController extends AbstractRestfulController {
                 return new JsonModel(array('success' => false));
             }
         }
-        return new JsonModel(array('success' => true, 'data' => $data));
     }
 
     public function update($id, $data) {
