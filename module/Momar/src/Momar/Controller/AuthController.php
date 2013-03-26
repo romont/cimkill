@@ -25,7 +25,7 @@ class AuthController extends AbstractRestfulController {
     public function create($data) {
         $form = new LoginForm();
 
-        $form->setData($data);
+        /*$form->setData($data);
         if ($form->isValid()) {
             //check authentication...
             $this->getAuthService()->getAdapter()
@@ -52,7 +52,8 @@ class AuthController extends AbstractRestfulController {
             } else {
                 return new JsonModel(array('success' => false));
             }
-        }
+        }*/
+        return new JsonModel(array('success' => true, 'data' => $data));
     }
 
     public function update($id, $data) {
