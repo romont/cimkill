@@ -23,7 +23,7 @@ class AuthController extends AbstractRestfulController {
     }
     
     public function create($data) {
-        $form = $this->getForm();
+        $form = new LoginForm();
 
         $request = $this->getRequest();
         if ($request->isPost()) {
