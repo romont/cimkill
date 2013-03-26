@@ -5,7 +5,7 @@ namespace Momar\Controller;
 use Zend\Mvc\Controller\AbstractRestfulController;
 use Zend\Form\Annotation\AnnotationBuilder;
 use Momar\Form\LoginForm;
-use Zend\View\Model\ViewModel;
+use Zend\View\Model\JsonModel;
 use Momar\Model\Employee;
 
 class AuthController extends AbstractRestfulController {
