@@ -14,7 +14,7 @@ class AuthController extends AbstractRestfulController {
     protected $storage;
     protected $authservice;
 
-    public function get() {
+    public function get($id) {
         return new JsonModel(array("data" => 0));
     }
     
