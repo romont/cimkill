@@ -37,9 +37,13 @@ return array(
         ),
     ),
     'view_manager' => array(
-        'template_path_stack' => array(
-            'Login' => __DIR__ . '/../view',
+        'template_map' => array(
+            'layout/layout'           => __DIR__ . '/../view/layout/plain.phtml',
         ),
+        'template_path_stack' => array(
+             __DIR__ . '/../view',
+        ),
+        //'layout' => 'layout/plain',
     ),
 );
 ?>

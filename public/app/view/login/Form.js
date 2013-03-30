@@ -26,7 +26,8 @@ Ext.define('CK.view.login.Form', {
             fieldLabel: 'Password',
             inputType: 'password',
             allowBlank: false
-        }
+        },
+        
         ];
 
         this.buttons = [

@@ -26,11 +26,6 @@ class LoginForm extends Form {
         ));
 
         $this->add(array(
-            'type' => 'Zend\Form\Element\Checkbox',
-            'name' => 'rememberMe'
-        ));
-
-        $this->add(array(
             'type' => 'Zend\Form\Element\Submit',
             'name' => 'Submit',
         ));

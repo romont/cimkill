@@ -39,13 +39,13 @@ class Module {
                 },
                 'AuthService' => function($sm) {
                     $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    //$dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter, 'employee', 'email', 'password');
-                    $dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter);
+                    $dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter, 'employee', 'email', 'password');
+                    /*$dbTableAuthAdapter = new DbTableAuthAdapter($dbAdapter);
 
                     $dbTableAuthAdapter
                             ->setTableName('employee')
                             ->setIdentityColumn('email')
-                            ->setCredentialColumn('password');
+                            ->setCredentialColumn('password');*/
 
                     $authService = new AuthenticationService();
                     $authService->setAdapter($dbTableAuthAdapter);

@@ -35,7 +35,7 @@ Ext.define('CK.controller.Login', {
 
                     this.getLoginForm().form.submit({
                         waitMsg:'Loading...',
-                        url: '/momar/auth/create',
+                        url: '/momar/auth',
                         method: 'POST',
                         success: function(form,action) {
                             //store.load();
@@ -48,11 +48,11 @@ Ext.define('CK.controller.Login', {
                         failure: function(form,action){
                             Ext.MessageBox.alert('Error', "Invalid email/password");
                         },
-                        params:
+                        /*params:
                         {
                             //view: 'sencha',
                             json: true
-                        }
+                        }*/
                     });
                 }
             }

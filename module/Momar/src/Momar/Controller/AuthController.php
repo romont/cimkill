@@ -14,6 +14,25 @@ class AuthController extends AbstractRestfulController {
     protected $storage;
     protected $authservice;
 
+
+    public function getAuthService() {
+        if (!$this->authservice) {
+            $this->authservice = $this->getServiceLocator()
+                    ->get('AuthService');
+        }
+
+        return $this->authservice;
+    }
+
+    public function getSessionStorage() {
+        if (!$this->storage) {
+            $this->storage = $this->getServiceLocator()
+                    ->get('Momar\Model\MyAuthStorage');
+        }
+
+        return $this->storage;
+    }
+
     public function get($id) {
         return new JsonModel(array("data" => 0));
     }
@@ -29,8 +48,8 @@ class AuthController extends AbstractRestfulController {
         if ($form->isValid()) {
             //check authentication...
             $this->getAuthService()->getAdapter()
-                    ->setIdentity($data->email)
-                    ->setCredential($data->password);
+                    ->setIdentity(urldecode($data['email']))
+                    ->setCredential(urldecode($data['password']));
 
             $result = $this->getAuthService()->authenticate();
             foreach ($result->getMessages() as $message) {
@@ -40,19 +59,19 @@ class AuthController extends AbstractRestfulController {
             if ($result->isValid()) {
                 //$redirect = 'application';
                 //check if it has rememberMe :
-                if ($data->rememberMe == 1) {
+                /*if ($data['rememberMe'] == 1) {
                     $this->getSessionStorage()
                             ->setRememberMe(1);
                     //set storage again
                     $this->getAuthService()->setStorage($this->getSessionStorage());
-                }
-                $this->getAuthService()->getStorage()->write($data->email);
-                return new JsonModel(array('success' => true));
+                }*/
+                $this->getAuthService()->getStorage()->write(urldecode($data['email']));
+                return new JsonModel(array('success' => true, 'email' => $data['email']));
             } else {
-                return new JsonModel(array('success' => false));
+                return new JsonModel(array('success' => false, 'response' => 'Form valid, result not valid'));
             }
         } else {
-            return new JsonModel(array('success' => false));
+            return new JsonModel(array('success' => false, 'response' => 'Form not valid'));
         }
     }
 
@@ -62,24 +81,6 @@ class AuthController extends AbstractRestfulController {
 
     public function delete($id) {
         return new JsonModel(array("data" => 0));
-    }
-
-    public function getAuthService() {
-        if (!$this->authservice) {
-            $this->authservice = $this->getServiceLocator()
-                    ->get('AuthService');
-        }
-
-        return $this->authservice;
-    }
-
-    public function getSessionStorage() {
-        if (!$this->storage) {
-            $this->storage = $this->getServiceLocator()
-                    ->get('Model\Model\MyAuthStorage');
-        }
-
-        return $this->storage;
     }
 
     public function getForm() {
